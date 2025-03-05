@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HexGL - The Futuristic Racing Game | Play Online</title>
+    <meta name="description" content="Experience HexGL, a fast-paced futuristic racing game with stunning visuals and addictive gameplay. Play for free online now!">
+    <link rel="canonical" href="https://interestedgame.org/hexgl">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root {
+            --apple-blue: #007AFF;
+            --apple-green: #34C759;
+            --apple-indigo: #5856D6;
+            --apple-orange: #FF9500;
+            --apple-pink: #FF2D55;
+            --apple-purple: #AF52DE;
+            --apple-red: #FF3B30;
+            --apple-teal: #5AC8FA;
+            --apple-yellow: #FFCC00;
+            --apple-gray: #8E8E93;
+            --apple-gray2: #AEAEB2;
+            --apple-gray3: #C7C7CC;
+            --apple-gray4: #D1D1D6;
+            --apple-gray5: #E5E5EA;
+            --apple-gray6: #F2F2F7;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--apple-gray6);
+            color: #333;
+        }
+        
+        .game-container {
+            aspect-ratio: 16/9;
+            max-height: 80vh;
+        }
+        
+        .btn-primary {
+            background-color: var(--apple-blue);
+            color: white;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            background-color: #0062cc;
+            transform: translateY(-2px);
+        }
+        
+        .feature-card {
+            border-top: 3px solid var(--apple-blue);
+            transition: all 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .text-apple-blue { color: var(--apple-blue); }
+        .bg-apple-blue { background-color: var(--apple-blue); }
+        .text-apple-gray { color: var(--apple-gray); }
+        .border-apple-gray5 { border-color: var(--apple-gray5); }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="/" class="flex items-center space-x-2">
+                <span class="text-2xl font-bold text-apple-blue">HexGL</span>
+            </a>
+            <nav class="hidden md:flex space-x-6">
+                <a href="#game" class="text-gray-700 hover:text-apple-blue transition-colors">Play Now</a>
+                <a href="#features" class="text-gray-700 hover:text-apple-blue transition-colors">Features</a>
+                <a href="#about" class="text-gray-700 hover:text-apple-blue transition-colors">About</a>
+                <a href="#controls" class="text-gray-700 hover:text-apple-blue transition-colors">Controls</a>
+            </nav>
+            <button class="md:hidden text-gray-700" id="mobile-menu-button">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div class="md:hidden hidden bg-white w-full pb-3 px-4" id="mobile-menu">
+            <a href="#game" class="block py-2 text-gray-700 hover:text-apple-blue transition-colors">Play Now</a>
+            <a href="#features" class="block py-2 text-gray-700 hover:text-apple-blue transition-colors">Features</a>
+            <a href="#about" class="block py-2 text-gray-700 hover:text-apple-blue transition-colors">About</a>
+            <a href="#controls" class="block py-2 text-gray-700 hover:text-apple-blue transition-colors">Controls</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="py-12 md:py-20 bg-gradient-to-r from-blue-500 to-indigo-600 text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold mb-4">HexGL - The Futuristic Racing Game</h1>
+            <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">Experience lightning-fast racing in a stunning futuristic world with this HTML5 masterpiece.</p>
+            <a href="#game" class="inline-block bg-white text-blue-600 font-bold px-8 py-3 rounded-lg shadow-lg hover:bg-gray-100 transition-all transform hover:-translate-y-1">
+                Play Now for Free
+            </a>
+        </div>
+    </section>
+
+    <!-- Game Section -->
+    <section id="game" class="py-12 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-8">Play HexGL Online</h2>
+            <div class="game-container w-full mx-auto bg-black rounded-lg overflow-hidden shadow-xl border-4 border-gray-200">
+                <iframe src="https://hexgl.bkcore.com/play/" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen sandbox="allow-same-origin allow-scripts allow-popups allow-forms" referrerpolicy="no-referrer" loading="lazy" class="w-full h-full"></iframe>
+            </div>
+            <div class="mt-4 text-center">
+                <a href="https://hexgl.bkcore.com/play/" target="_blank" class="inline-block text-apple-blue hover:underline">或直接在新标签页中打开游戏 ↗</a>
+            </div>
+            <div class="mt-6 text-center">
+                <p class="text-gray-600 mb-4">Having trouble? Make sure your browser supports WebGL and you have the latest graphics drivers.</p>
+                <button class="btn-primary px-6 py-2 rounded-lg font-semibold">Fullscreen Mode</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-12 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Game Features</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="feature-card bg-white p-6 rounded-lg shadow-md">
+                    <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-apple-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Stunning Graphics</h3>
+                    <p class="text-gray-600">Immerse yourself in a visually striking futuristic universe with smooth 3D graphics and dynamic lighting effects.</p>
+                </div>
+                <div class="feature-card bg-white p-6 rounded-lg shadow-md">
+                    <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-apple-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Challenging Tracks</h3>
+                    <p class="text-gray-600">Navigate through intricate track designs with sharp turns, loops, and obstacles that will test your racing skills.</p>
+                </div>
+                <div class="feature-card bg-white p-6 rounded-lg shadow-md">
+                    <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-apple-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Responsive Controls</h3>
+                    <p class="text-gray-600">Experience precise and intuitive controls that work seamlessly across different devices and input methods.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-12 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-8">About HexGL</h2>
+            <div class="max-w-3xl mx-auto">
+                <p class="text-gray-700 mb-4">HexGL is an innovative HTML5 racing game that brings the thrill of high-speed futuristic racing to your browser. Developed using WebGL technology, this game demonstrates the incredible potential of modern web technologies for creating immersive gaming experiences.</p>
+                <p class="text-gray-700 mb-4">The game features a sleek, futuristic aesthetic inspired by classics like WipEout and F-Zero. With its stunning visuals and responsive gameplay, HexGL pushes the boundaries of what's possible in browser-based gaming.</p>
+                <p class="text-gray-700 mb-4">Whether you're a casual gamer looking for a quick adrenaline rush or a racing enthusiast seeking a new challenge, HexGL offers an accessible yet deeply engaging experience that will keep you coming back for more.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Controls Section -->
+    <section id="controls" class="py-12 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-8">Game Controls</h2>
+            <div class="max-w-2xl mx-auto bg-white rounded-lg shadow-md p-6 border border-apple-gray5">
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div>
+                        <h3 class="text-xl font-semibold mb-3">Keyboard Controls</h3>
+                        <ul class="space-y-2">
+                            <li class="flex items-center">
+                                <span class="bg-gray-200 px-2 py-1 rounded text-sm font-mono mr-3 w-20 text-center">Up Arrow</span>
+                                <span>Accelerate</span>
+                            </li>
+                            <li class="flex items-center">
+                                <span class="bg-gray-200 px-2 py-1 rounded text-sm font-mono mr-3 w-20 text-center">Down Arrow</span>
+                                <span>Brake</span>
+                            </li>
+                            <li class="flex items-center">
+                                <span class="bg-gray-200 px-2 py-1 rounded text-sm font-mono mr-3 w-20 text-center">Left Arrow</span>
+                                <span>Turn Left</span>
+                            </li>
+                            <li class="flex items-center">
+                                <span class="bg-gray-200 px-2 py-1 rounded text-sm font-mono mr-3 w-20 text-center">Right Arrow</span>
+                                <span>Turn Right</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold mb-3">Mobile Controls</h3>
+                        <p class="text-gray-700 mb-2">On mobile devices:</p>
+                        <ul class="space-y-2">
+                            <li class="flex items-center">
+                                <span class="bg-gray-200 px-2 py-1 rounded text-sm mr-3 w-20 text-center">Tilt</span>
+                                <span>Steer Left/Right</span>
+                            </li>
+                            <li class="flex items-center">
+                                <span class="bg-gray-200 px-2 py-1 rounded text-sm mr-3 w-20 text-center">Tap</span>
+                                <span>Brake</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="mt-6 pt-6 border-t border-gray-200">
+                    <h3 class="text-xl font-semibold mb-3">Tips for Success</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-start">
+                            <span class="text-apple-blue mr-2">•</span>
+                            <span>Maintain a consistent racing line to maximize your speed</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-apple-blue mr-2">•</span>
+                            <span>Use the boundaries to guide your turns, but avoid hitting them</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-apple-blue mr-2">•</span>
+                            <span>Brake early before sharp turns to maintain control</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-10">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <h2 class="text-2xl font-bold">HexGL</h2>
+                    <p class="text-gray-400 mt-2">The futuristic racing experience</p>
+                </div>
+                <div class="flex flex-col md:flex-row md:space-x-8 space-y-4 md:space-y-0">
+                    <div>
+                        <h3 class="text-lg font-semibold mb-2">Quick Links</h3>
+                        <ul class="space-y-1">
+                            <li><a href="#game" class="text-gray-400 hover:text-white transition-colors">Play Game</a></li>
+                            <li><a href="#features" class="text-gray-400 hover:text-white transition-colors">Features</a></li>
+                            <li><a href="#about" class="text-gray-400 hover:text-white transition-colors">About</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold mb-2">Connect</h3>
+                        <ul class="space-y-1">
+                            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Facebook</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Twitter</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Discord</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 HexGL. All rights reserved.</p>
+                <p class="mt-2">Experience the thrill of futuristic racing at <a href="https://interestedgame.org" class="text-blue-400 hover:text-blue-300">interestedgame.org</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Mobile Menu Toggle -->
+    <script>
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', function() {
+                document.getElementById('mobile-menu').classList.add('hidden');
+            });
+        });
+
+        // Fullscreen functionality
+        document.querySelector('.btn-primary').addEventListener('click', function() {
+            const iframe = document.querySelector('iframe');
+            if (iframe.requestFullscreen) {
+                iframe.requestFullscreen();
+            } else if (iframe.webkitRequestFullscreen) { /* Safari */
+                iframe.webkitRequestFullscreen();
+            } else if (iframe.msRequestFullscreen) { /* IE11 */
+                iframe.msRequestFullscreen();
+            }
+        });
+    </script>
+</body>
+</html>
