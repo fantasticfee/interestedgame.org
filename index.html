@@ -99,6 +99,16 @@
             transform: scale(1.05);
         }
         
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .header-text {
+            text-align: left;
+        }
+        
         footer {
             background-color: var(--apple-black);
             color: white;
@@ -122,22 +132,37 @@
                 padding-top: 2rem;
                 padding-bottom: 2rem;
             }
+            
+            .header-content {
+                flex-direction: column;
+                gap: 2rem;
+            }
+            
+            .header-text {
+                text-align: center;
+            }
         }
     </style>
 </head>
 <body>
     <header class="header py-20">
-        <div class="container mx-auto px-4 text-center">
-            <h1 class="mb-6">HexGL: The Future of Racing Games</h1>
-            <p class="text-xl mb-8">A breathtaking high-speed futuristic racing game built with HTML5 and WebGL technology.</p>
-            <a href="#play-now" class="btn-play inline-block">Play Now</a>
+        <div class="container mx-auto px-4">
+            <div class="header-content">
+                <div class="header-text">
+                    <h1 class="mb-6">HexGL: The Future of Racing Games</h1>
+                    <p class="text-xl mb-8">A breathtaking high-speed futuristic racing game built with HTML5 and WebGL technology.</p>
+                </div>
+                <div class="flex items-center">
+                    <a href="#game-frame" id="play-now" class="btn-play">Play Now</a>
+                </div>
+            </div>
         </div>
     </header>
     
     <main class="py-16">
         <div class="container mx-auto px-4">
             <div class="game-container bg-white p-6 md:p-8">
-                <div id="play-now" class="iframe-container mb-8">
+                <div id="game-frame" class="iframe-container mb-8">
                     <iframe src="https://hexgl.bkcore.com/play/" allow="fullscreen" title="Play HexGL Racing Game"></iframe>
                 </div>
                 
