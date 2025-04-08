@@ -3,234 +3,182 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Play Monster Survivors online - an exciting action game where you battle endless waves of monsters to survive as long as possible!">
-    <meta name="keywords" content="Monster Survivors, online game, action game, survival game">
-    <title>Monster Survivors - Epic Monster Survival Game | Play Online</title>
-    <link rel="canonical" href="https://interestedgame.org">
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <meta name="description" content="Play HexGL - A fast-paced futuristic racing game built with HTML5 and WebGL technology. Experience high-speed racing in a sleek sci-fi environment.">
+    <title>HexGL - Fast-Paced Futuristic Racing Game | InterestedGame.org</title>
+    <link rel="canonical" href="https://interestedgame.org" />
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.js"></script>
     <style>
-        /* Apple color scheme */
         :root {
             --apple-blue: #007AFF;
-            --apple-green: #34C759;
-            --apple-indigo: #5856D6;
-            --apple-orange: #FF9500;
-            --apple-red: #FF3B30;
-            --apple-dark-gray: #1C1C1E;
-            --apple-light-gray: #F2F2F7;
+            --apple-lightblue: #64D2FF;
+            --apple-darkblue: #0040DD;
+            --apple-gray: #8E8E93;
+            --apple-lightgray: #F2F2F7;
+            --apple-black: #1D1D1F;
         }
+        
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-            background-color: var(--apple-light-gray);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            color: var(--apple-black);
+            background-color: var(--apple-lightgray);
         }
-        .header-bg {
-            background: linear-gradient(90deg, var(--apple-blue), var(--apple-indigo));
+        
+        .header {
+            background: linear-gradient(135deg, var(--apple-blue), var(--apple-darkblue));
+            color: white;
         }
-        .btn-primary {
-            background-color: var(--apple-blue);
-            transition: all 0.3s ease;
+        
+        .game-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            overflow: hidden;
         }
-        .btn-primary:hover {
-            background-color: var(--apple-indigo);
-            transform: translateY(-2px);
-        }
-        .game-section {
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-        }
-        .feature-card {
-            border-left: 4px solid var(--apple-blue);
-            transition: all 0.3s ease;
-        }
-        .feature-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
-        }
-        .footer-bg {
-            background-color: var(--apple-dark-gray);
-        }
-        /* Custom scrollbar for the game description */
-        .game-description::-webkit-scrollbar {
-            width: 8px;
-        }
-        .game-description::-webkit-scrollbar-track {
-            background: #f1f1f1;
-        }
-        .game-description::-webkit-scrollbar-thumb {
-            background: var(--apple-blue);
-            border-radius: 10px;
-        }
-        /* Responsive iframe container */
+        
         .iframe-container {
             position: relative;
-            overflow: hidden;
             width: 100%;
-            padding-top: 56.25%; /* 16:9 Aspect Ratio */
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+            background-color: #000;
         }
-        .responsive-iframe {
+        
+        .iframe-container iframe {
             position: absolute;
             top: 0;
             left: 0;
-            bottom: 0;
-            right: 0;
             width: 100%;
             height: 100%;
             border: none;
         }
+        
+        h1 {
+            font-weight: 700;
+            font-size: 2.5rem;
+            line-height: 1.2;
+        }
+        
+        h2 {
+            color: var(--apple-blue);
+            font-weight: 600;
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        
+        .highlight {
+            color: var(--apple-blue);
+        }
+        
+        .feature-card {
+            border-radius: 12px;
+            border: 1px solid #e5e5e5;
+            transition: all 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 122, 255, 0.1);
+            border-color: var(--apple-blue);
+        }
+        
+        .btn-play {
+            background-color: var(--apple-blue);
+            color: white;
+            font-weight: 600;
+            padding: 0.75rem 2rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-play:hover {
+            background-color: var(--apple-darkblue);
+            transform: scale(1.05);
+        }
+        
+        footer {
+            background-color: var(--apple-black);
+            color: white;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            h2 {
+                font-size: 1.3rem;
+            }
+            
+            .py-20 {
+                padding-top: 3rem;
+                padding-bottom: 3rem;
+            }
+            
+            .py-16 {
+                padding-top: 2rem;
+                padding-bottom: 2rem;
+            }
+        }
     </style>
 </head>
 <body>
-    <!-- Header Section -->
-    <header class="header-bg text-white py-6 md:py-12">
-        <div class="container mx-auto px-4">
-            <div class="flex flex-col md:flex-row justify-between items-center">
-                <div class="mb-6 md:mb-0">
-                    <h1 class="text-3xl md:text-5xl font-bold leading-tight mb-2">Monster Survivors</h1>
-                    <p class="text-xl md:text-2xl font-light">Battle endless hordes of monsters in this thrilling survival game!</p>
-                </div>
-                <div>
-                    <a href="#play-now" class="btn-primary text-white font-bold py-3 px-8 rounded-full text-lg inline-block">Play Now</a>
-                </div>
-            </div>
+    <header class="header py-20">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="mb-6">HexGL: The Future of Racing Games</h1>
+            <p class="text-xl mb-8">A breathtaking high-speed futuristic racing game built with HTML5 and WebGL technology.</p>
+            <a href="#play-now" class="btn-play inline-block">Play Now</a>
         </div>
     </header>
-
-    <!-- Game Section -->
-    <section id="play-now" class="py-12 md:py-16">
+    
+    <main class="py-16">
         <div class="container mx-auto px-4">
-            <h2 class="text-2xl md:text-3xl font-bold text-center mb-10">Play Monster Survivors Online</h2>
-            <div class="game-section bg-white rounded-lg overflow-hidden max-w-5xl mx-auto">
-                <div class="iframe-container">
-                    <iframe class="responsive-iframe" src="https://hexgl.bkcore.com/play/" allow="autoplay; fullscreen" allowfullscreen></iframe>
+            <div class="game-container bg-white p-6 md:p-8">
+                <div id="play-now" class="iframe-container mb-8">
+                    <iframe src="https://hexgl.bkcore.com/play/" allow="fullscreen" title="Play HexGL Racing Game"></iframe>
                 </div>
-                <div class="p-6">
-                    <p class="text-gray-700 mb-4">Use WASD or arrow keys to move, space to attack, and collect power-ups to enhance your abilities!</p>
-                    <div class="flex justify-center">
-                        <button class="btn-primary text-white font-bold py-2 px-6 rounded-full text-sm">Fullscreen</button>
+                
+                <div class="game-info mb-12">
+                    <h2>About HexGL</h2>
+                    <p class="mb-4">HexGL is an innovative racing game that combines stunning visuals with fast-paced gameplay. Pilot your sleek spacecraft through futuristic tracks, navigate sharp turns, and reach breakneck speeds in this WebGL-powered experience.</p>
+                    
+                    <h2>How to Play</h2>
+                    <p class="mb-4">Use the arrow keys or WASD to control your vehicle. Master the perfect racing line to achieve the fastest lap time. Control your speed around corners and avoid hitting the walls to maintain momentum.</p>
+                    
+                    <h2>Game Features</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
+                        <div class="feature-card p-6">
+                            <h3 class="text-lg font-semibold mb-2">Stunning Graphics</h3>
+                            <p>Experience breathtaking WebGL visuals with detailed environments and lighting effects.</p>
+                        </div>
+                        <div class="feature-card p-6">
+                            <h3 class="text-lg font-semibold mb-2">Smooth Performance</h3>
+                            <p>Enjoy high-speed racing with optimized gameplay that runs smoothly on modern browsers.</p>
+                        </div>
+                        <div class="feature-card p-6">
+                            <h3 class="text-lg font-semibold mb-2">Multiple Tracks</h3>
+                            <p>Test your skills on challenging tracks with unique layouts and obstacles.</p>
+                        </div>
                     </div>
+                    
+                    <h2>Technical Details</h2>
+                    <p class="mb-4">HexGL was developed using HTML5, WebGL, and JavaScript technologies. It demonstrates the capabilities of modern web browsers to deliver console-quality gaming experiences without requiring any plugins or downloads.</p>
+                    
+                    <h2>Performance Tips</h2>
+                    <p class="mb-4">For the best gaming experience, we recommend using a modern browser like Chrome, Firefox, or Safari. The game performs optimally on desktop with a dedicated graphics card, but also runs well on recent mobile devices.</p>
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- Game Features Section -->
-    <section class="py-12 md:py-16 bg-white">
-        <div class="container mx-auto px-4">
-            <h2 class="text-2xl md:text-3xl font-bold text-center mb-10">Game Features</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Feature 1 -->
-                <div class="feature-card bg-gray-50 p-6 rounded-lg">
-                    <h2 class="text-xl font-bold mb-3">Endless Gameplay</h2>
-                    <p class="text-gray-700">Fight wave after wave of increasingly difficult monsters to see how long you can survive.</p>
-                </div>
-                <!-- Feature 2 -->
-                <div class="feature-card bg-gray-50 p-6 rounded-lg">
-                    <h2 class="text-xl font-bold mb-3">Character Upgrades</h2>
-                    <p class="text-gray-700">Collect experience points to level up and enhance your character's abilities.</p>
-                </div>
-                <!-- Feature 3 -->
-                <div class="feature-card bg-gray-50 p-6 rounded-lg">
-                    <h2 class="text-xl font-bold mb-3">Unique Enemies</h2>
-                    <p class="text-gray-700">Face a variety of monsters, each with their own attack patterns and weaknesses.</p>
-                </div>
-                <!-- Feature 4 -->
-                <div class="feature-card bg-gray-50 p-6 rounded-lg">
-                    <h2 class="text-xl font-bold mb-3">Special Abilities</h2>
-                    <p class="text-gray-700">Unlock and upgrade powerful special abilities to combat tougher enemies.</p>
-                </div>
-                <!-- Feature 5 -->
-                <div class="feature-card bg-gray-50 p-6 rounded-lg">
-                    <h2 class="text-xl font-bold mb-3">Global Leaderboards</h2>
-                    <p class="text-gray-700">Compete with players worldwide to achieve the highest scores and longest survival times.</p>
-                </div>
-                <!-- Feature 6 -->
-                <div class="feature-card bg-gray-50 p-6 rounded-lg">
-                    <h2 class="text-xl font-bold mb-3">Challenging Bosses</h2>
-                    <p class="text-gray-700">Test your skills against formidable boss monsters with unique abilities.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Game Description Section -->
-    <section class="py-12 md:py-16">
-        <div class="container mx-auto px-4">
-            <h2 class="text-2xl md:text-3xl font-bold text-center mb-10">About Monster Survivors</h2>
-            <div class="max-w-4xl mx-auto bg-white rounded-lg shadow-lg overflow-hidden">
-                <div class="p-6 md:p-8 game-description max-h-96 overflow-y-auto">
-                    <p class="mb-4">
-                        <strong>Monster Survivors</strong> is an action-packed survival game where your goal is to survive as long as possible against endless waves of monsters. As you progress, the difficulty increases, challenging your reflexes and strategy.
-                    </p>
-                    <p class="mb-4">
-                        In this thrilling game, you control a hero who must battle against increasingly difficult hordes of monsters. The longer you survive, the stronger you become, but the enemies also grow in number and power.
-                    </p>
-                    <p class="mb-4">
-                        <strong>How to Play:</strong>
-                    </p>
-                    <ul class="list-disc pl-5 mb-4">
-                        <li class="mb-2">Use WASD or arrow keys to move your character around the map</li>
-                        <li class="mb-2">Press Space to use your primary attack</li>
-                        <li class="mb-2">Collect experience gems from defeated enemies to level up</li>
-                        <li class="mb-2">When you level up, choose from a selection of powerful upgrades</li>
-                        <li class="mb-2">Avoid taking damage by dodging enemy attacks</li>
-                        <li class="mb-2">Survive as long as possible to achieve a high score</li>
-                    </ul>
-                    <p class="mb-4">
-                        As you progress through the game, you'll unlock new characters with unique abilities and play styles. Each character offers a different approach to survival, allowing for varied gameplay experiences.
-                    </p>
-                    <p>
-                        Monster Survivors is free to play and runs directly in your browser - no downloads required. Challenge yourself or compete with friends to see who can survive the longest!
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer Section -->
-    <footer class="footer-bg text-white py-8">
-        <div class="container mx-auto px-4">
-            <div class="flex flex-col md:flex-row justify-between items-center">
-                <div class="mb-4 md:mb-0">
-                    <p>&copy; 2025 Monster Survivors | <a href="https://interestedgame.org" class="hover:underline">InterestedGame.org</a></p>
-                </div>
-                <div class="flex space-x-4">
-                    <a href="#" class="hover:text-gray-300">Privacy Policy</a>
-                    <a href="#" class="hover:text-gray-300">Terms of Service</a>
-                    <a href="#" class="hover:text-gray-300">Contact</a>
-                </div>
-            </div>
+    </main>
+    
+    <footer class="py-8">
+        <div class="container mx-auto px-4 text-center">
+            <p class="mb-4">&copy; 2025 interestedgame.org | HexGL Game</p>
+            <p class="text-sm text-gray-400">HexGL was created by BKcore. This website is for demonstration purposes.</p>
         </div>
     </footer>
-
-    <!-- Load Three.js library -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    
-    <!-- Simple JavaScript for fullscreen functionality -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const fullscreenBtn = document.querySelector('.btn-primary');
-            const iframe = document.querySelector('.responsive-iframe');
-            
-            fullscreenBtn.addEventListener('click', function() {
-                if (iframe.requestFullscreen) {
-                    iframe.requestFullscreen();
-                } else if (iframe.webkitRequestFullscreen) { /* Safari */
-                    iframe.webkitRequestFullscreen();
-                } else if (iframe.msRequestFullscreen) { /* IE11 */
-                    iframe.msRequestFullscreen();
-                }
-            });
-
-            // Make THREE available to the iframe if needed
-            try {
-                iframe.onload = function() {
-                    if (iframe.contentWindow) {
-                        iframe.contentWindow.THREE = window.THREE;
-                    }
-                };
-            } catch (e) {
-                console.log("Note: Could not pass THREE to iframe due to cross-origin restrictions");
-            }
-        });
-    </script>
 </body>
 </html>
